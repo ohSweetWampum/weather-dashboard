@@ -21,19 +21,80 @@
          </header>
          <aside class="col-md-3 bg-warning vh-100">
             <br/>
-            <label for="inputCityName" class="form-label  fs-3">Search City Name</label>
+            <label for="inputCityName" class="form-label  fs-2">Search City Name</label>
             <input type="password" id="inputCityName" placeholder= "Madison" class="form-control form-control-lg" aria-labelledby="enterCityName" style="font-size: 2rem;">
-            <button id="add-city" type="submit"  class="btn btn-primary btn-lg btn-block" style="margin-top: 1rem;">Add a City</button>
+            <button id="add-city" type="submit"  class="btn btn-primary btn-lg btn-block" style="margin-top: 1rem;">Add City</button>
             <hr style="border-top: 4px solid black; margin-top: 1rem;">
          </aside>
          <div class="col-md-9">
             <div class="row" style="height: 32%;">
-               <section class="col-md-12 bg-danger"></section>
-            </div>
-            <div class="row" style="height: 53%;">
-               <section class="col-md-12 bg-success">
-                  <h1 class = "fs-1 " >5-Day Forecast:</h1>
+               <section class="col-md-12 bg-danger">
+                <div class="row row-cols-1 row-cols-md-5 g-4">
+                  <div class="col-md-12">
+                    <div id = "card-currentid" class="card-currentclass border-dark bg-white">
+                      <div class="card-body-current fs-2">
+                        <h5 class="card-title">date and day of week</h5>
+                        <p class="card-temp">High: 75°F</p>
+                        <p class="card-wind">Low: 60°F</p>
+                        <p class="card-wind">Low: 60°F</p>
+                        <p class="card-wind">Low: 60°F</p>
+                      </div>
+                    </div>
+                  </div>
                </section>
+              </div>
+              <div class="row" style="height: 53%;">
+              <section class="col-md-12 bg-success">
+                <h1 class="fs-1">5-Day Forecast:</h1>
+                <div class="row row-cols-1 row-cols-md-5 g-4">
+                  <div class="col">
+                    <div class="card border-dark bg-white">
+                      <div class="card-body">
+                        <h5 class="card-title">Monday</h5>
+                        <p class="card-text">High: 75°F</p>
+                        <p class="card-text">Low: 60°F</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card border-dark bg-white">
+                      <div class="card-body">
+                        <h5 class="card-title">Tuesday</h5>
+                        <p class="card-text">High: 78°F</p>
+                        <p class="card-text">Low: 65°F</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card border-dark bg-white">
+                      <div class="card-body">
+                        <h5 class="card-title">Wednesday</h5>
+                        <p class="card-text">High: 80°F</p>
+                        <p class="card-text">Low: 68°F</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card border-dark bg-white">
+                      <div class="card-body">
+                        <h5 class="card-title">Thursday</h5>
+                        <p class="card-text">High: 77°F</p>
+                        <p class="card-text">Low: 63°F</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card border-dark bg-white">
+                      <div class="card-body">
+                        <h5 class="card-title">Friday</h5>
+                        <p class="card-text">High: 72°F</p>
+                        <p class="card-text">Low: 57°F</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
             </div>
             <div class="row" style="height: 15%;">
                <footer class="col-md-12 bg-secondary"></footer>

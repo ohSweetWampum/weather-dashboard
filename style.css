@@ -2,3 +2,19 @@
   display: block;
   width: 100%;
 }
+
+.card-body{
+  height: 350px;
+}
+.card-body-current{
+  height: 270px;
+  
+}
+.card-currentclass{
+
+  margin: 25px;
+  
+}
+#card-currentid{
+  border: solid black 1px;
+}
