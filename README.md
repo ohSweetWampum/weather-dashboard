@@ -4,7 +4,7 @@ work day scheduler app
 
 ## Visit the Site
 
-[Cleck Here to Visit the Deployed Site](https://ohsweetwampum.github.io/work-day-scheduler-app/)
+[Cleck Here to Visit the Deployed Site](https://ohsweetwampum.github.io/weather-dashboard/)
 
 ## Description
 
