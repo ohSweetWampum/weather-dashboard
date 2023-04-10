@@ -15,54 +15,53 @@
    </head>
    <body>
       <div class="container-fluid">
-      <div class="row" style="height: 100%;">
-      <header class="text-center  col-12 display-2 bg-info">
-         <h1>Welcome To Your Weather Dashboard</h1>
-      </header>
-      <aside class="col-md-3 bg-warning vh-100">
-         <br/>
-         <label for="inputCityName" class="form-label  fs-2">Search City Name</label>
-         <input type="text" id="inputCityName" placeholder= "Madison" class="form-control form-control-lg" aria-labelledby="enterCityName" style="font-size: 2rem;">
-         <form id="searchBox">
-            <button type="submit" id = "search-city" class="btn btn-primary btn-lg btn-block" style="margin-top: 1rem;">Add City</button>
-         </form>
-         <hr style="border-top: 4px solid black; margin-top: 1rem;">
-         <div id="recent-cities-area">
-            <div id = "recent-cities-buttons-container"></div>
-         </div>
-      </aside>
-      <div class="col-md-9">
-         <div class="row" style="height: 32%;">
-            <section class="col-md-12 bg-danger" >
-            <div class="row row-cols-1 row-cols-md-5 g-4">
-               <div class="col-md-12">
-                  <div id = "card-currentid" class="card-currentclass border-dark bg-white">
-                     <div class="card-body-current fs-2">
-                        <h5 class="card-title" id="city-title"></h5>
-                        <div class="conditions-icon"></div>
-                        <p id="current-temp"></p>
-                        <p id="current-day-humidity"></p>
-                        <p id="current-day-high"></p>
-                        <p id="current-day-low"></p>
-                        <p id="current-day-wind"></p>
-                     </div>
-                  </div>
+         <div class="row" style="height: 100%;">
+            <header class="text-center col-12 display-2">
+               <h1>Welcome To Your Weather Dashboard</h1>
+            </header>
+            <aside class="col-md-3 bg-warning vh-100">
+               <br/>
+               <label for="inputCityName" class="form-label  fs-2">Search City Name</label>
+               <input type="text" id="inputCityName" placeholder= "Madison" class="form-control form-control-lg" style="font-size: 2rem;">
+               <form id="searchBox">
+                  <button type="submit" id="search-city" class="btn btn-primary btn-lg btn-block" style="margin-top: 1rem;">Add City</button>
+               </form>
+               <hr style="border-top: 4px solid black; margin-top: 1rem;">
+               <div id="recent-cities-area">
+                  <div id="recent-cities-buttons-container"></div>
                </div>
-               <section class="col-md-12 bg-success">
-                  <h1 class="fs-1">5-Day Forecast:</h1>
-                  <div class="row row-cols-1 row-cols-md-5 g-4" id="forecast-container">
-                     
-                  </div>
-               </section>
-            </div>
-            <div class="row" style="height: 15%;">
-               <footer class="col-md-12 bg-secondary"></footer>
+            </aside>
+            <div class="col-md-9" style="background-color: #f2f2f2;">
+               <div class="row" style="height: 85%;">
+                  <section class="col-md-12">
+                     <div class="row row-cols-1 row-cols-md-5 g-4">
+                        <div class="col-md-12">
+                           <div id="card-currentid" class="card-currentclass border-dark bg-white">
+                              <div class="card-body-current fs-2">
+                                 <h5 class="card-title" id="city-title"></h5>
+                                 <div class="conditions-icon"></div>
+                                 <p id="current-temp"></p>
+                                 <p id="current-day-humidity"></p>
+                                 <p id="current-day-high"></p>
+                                 <p id="current-day-low"></p>
+                                 <p id="current-day-wind"></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+                  <section class="col-md-12">
+                     <h1 class="fs-1">5-Day Forecast:</h1>
+                     <div class="row row-cols-1 row-cols-md-5 g-4" id="forecast-container"></div>
+                  </section>
+               </div>
             </div>
          </div>
       </div>
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js">  </script>
       <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
          integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
       <script src="./script.js"></script>
    </body>
 </html>
+  

@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", function(event) {
 var recentlySearched = JSON.parse(localStorage.getItem('recentlySearched')) || [];
 recentlySearched.forEach(function(cityInput) {
   renderRecentlySearchedButtons(cityInput);
@@ -9,7 +9,6 @@ function searchCity(cityInput) {
   var apiURLCurrentWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&appid=" + apiKey;
 
   var currentTemp = document.getElementById("current-temp");
-  var currentDayConditions = document.querySelector("conditions-icon");
   var currentDayHigh = document.getElementById("current-day-high");
   var currentDayLow = document.getElementById("current-day-low");
   var currentDayWind = document.getElementById("current-day-wind");
@@ -65,10 +64,11 @@ document.getElementById("recent-cities-buttons-container").addEventListener("cli
 });
 
 
+// Function for rendering recently searched location buttons
 function renderRecentlySearchedButtons(cityInput) {
   var cityButtonContainer = document.getElementById("recent-cities-buttons-container");
 
-  
+  // check if city has already been searched
   var isDuplicate = false;
   var buttons = cityButtonContainer.querySelectorAll('button');
   buttons.forEach(function(button) {
@@ -77,27 +77,28 @@ function renderRecentlySearchedButtons(cityInput) {
     }
   });
 
- 
+  // adds new button if it's not a duplicate and if the max limit has not been reached
   if (!isDuplicate) {
     var cityButton = document.createElement("button");
-    cityButton.classList.add('btn', 'btn-secondary', 'btn-lg', 'mb-2');
+    cityButton.classList.add('btn', 'btn-secondary', 'btn-lg', 'mb-2', 'w-100');
     cityButton.textContent = cityInput;
     cityButtonContainer.appendChild(cityButton);
 
-    
+    // removes oldest button if max limit of 6 is reached
     if (buttons.length >= 6) {
       cityButtonContainer.removeChild(buttons[0]);
     }
-    
+    // save recently searched city to local storage
     var recentlySearched = JSON.parse(localStorage.getItem('recentlySearched')) || [];
     recentlySearched.push(cityInput);
     localStorage.setItem('recentlySearched', JSON.stringify(recentlySearched));
   }
 }
 
+
 function displayFiveDayForecast(data) {
   var forecastContainer = document.getElementById("forecast-container");
-  forecastContainer.innerHTML = ""; 
+  forecastContainer.innerHTML = ""; // clear existing content
 
   for (var i = 0; i < data.list.length; i += 8) {
     var forecast = data.list[i];
@@ -109,19 +110,18 @@ function displayFiveDayForecast(data) {
     card.classList.add("col");
     card.innerHTML = '<div class="card border-dark bg-white"><div class="card-body">' +
       '<h5 class="card-title">' + forecastDate + '</h5>' +
-      '<img src="' + iconUrl + '">' +
+      '<img src="' + iconUrl + '">' + // Update the icon URL
       '<p class="card-text">High: ' + forecast.main.temp_max + '°F</p>' +
       '<p class="card-text">Low: ' + forecast.main.temp_min + '°F</p>' +
       '<p class="card-text">Wind: ' + forecast.wind.speed + ' mph</p>' +
       '<p class="card-text">Humidity: ' + forecast.main.humidity + '%</p>' +
-
       '</div></div>';
 
     forecastContainer.appendChild(card);
   }
 }
 
-
+});
 
 
 
