@@ -1,6 +1,6 @@
-# work-day-scheduler-app
+# Weather Dashboard
 
-work day scheduler app
+A weather Dashboard
 
 ## Visit the Site
 
@@ -8,9 +8,12 @@ work day scheduler app
 
 ## Description
 
-This app has 24 time blocks, one for every hour of the day. In each hour block you can enter text to describe what task(s) you need to do at that particular time of the day. You can save your tasks by clicking the floppy disk icon and come back to the page whenever you need to and your tasks will still be there.The grey boxes indicate tasks that are past due, the red box is the task that you need to do at the moment, and the green boxes are tasks that you'll need to do in the future. At the top of the page there is displayed the current date and time, which you can reference to if needed.
+This app displays the current day's weather as weel as the 5-day forecast for a particular city. You can search a city and the weather data will be displayed. Below the search box is an area for your recently searched citites so all you have to do is click on the city button and it's weather will be displayed. This app is quick to use and only gives essential up to date weather data.
 
 ## Technology Used
+
+- OpenWeatherAPIs
+  [Learn about OpenWeather](https://openweathermap.org/api)
 
 - Bootstrap
   [Learn about Bootstrap](https://getbootstrap.com/)
@@ -35,32 +38,35 @@ This app has 24 time blocks, one for every hour of the day. In each hour block y
 
 ## Usage
 
-1. Choose a time block to put your task in, use mouse to click the text input area and type in your to-dos
-2. Click the save buton, which is a floppy disk icon to save your to-do
+1. Enter a city in the search box, click "add city"
+2. Weather data will then pop up
+3. Your recently searched for cities will populate as buttons below the search box, you can click on these buttons to see the citie's weather data instead of searching again
 
-![Alt Text](./assests/gifs/site-usage.gif)
+![Alt Text](./images/gifs/123.png)
 
 ## Code Highlight
 
-I wanted to highlight this code snippet because storing user data is very inportant if you want certain features available to the user. I used the keyword "this". var taskText gets the value of the input field with class 'description' that is a sibling of the clicked button. var taskTime gets the text of the element with class 'hour' that is a sibling of the clicked button. then finally, the last line tells to store to local storage with key of taskTime and value of taskText.
+I wanted to highlight this code snippet because I think it might be the first time I added html elements withing my JavaScript in this particular way and I just that it was neat.all the data (forecastDate, iconUrl, highTemp, lowTemp, wind speed and humidity) values are inserted using string concatenation.
 
 ```JavaScript
-function storeToLocal() {
-  $(".saveBtn").on("click", function () {
-    var taskText = $(this).siblings(".description").val();
-    var taskTime = $(this).siblings(".hour").text();
-    localStorage.setItem(taskTime, taskText);
-  });
-}
+  var card = document.createElement("div");
+      card.classList.add("col");
+      card.innerHTML = '<div class="card border-dark bg-white"><div class="card-body">' +
+        '<h5 class="card-title">' + forecastDate + '</h5>' +
+        '<img src="' + iconUrl + '">' +
+        '<p class="card-text">High: ' + highTemp + '°F</p>' +
+        '<p class="card-text">Low: ' + lowTemp + '°F</p>' +
+        '<p class="card-text">Wind: ' + forecastsForDate[0].wind.speed + ' mph</p>' +
+        '<p class="card-text">Humidity: ' + forecastsForDate[0].main.humidity + '%</p>' +
+        '</div></div>';
 ```
 
 ## Learning Points
 
 - Furthered knowledge of local storage, saving and retrieving
-- Learned how to use jQuery
-- Learned how to use bootstrap
-- Learned how to us day.js
-- Learned how to apply CSS classes when certain criteria are met
+- Learned how to use the spread operator
+- learned how to utilize 3rd party APIs, calling, response, etc.
+- Learned how add icons
 
 ## Author Info
 
@@ -75,14 +81,17 @@ Matthew Gibson
 [meyerweb.com](https://meyerweb.com/eric/tools/css/reset/)
 (For my reset.css file)
 
-[w3schools.com](https://www.w3schools.com/jquery/html_addclass.asp)
-(addClass() method)
+[mdnwebdocs.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+(spread operator)
 
 [day.js.org](https://day.js.org/)
 (Day.js documents)
 
 [jQuery.com](https://jquery.com/)
 (jQuery Documents)
+
+[OpenWeatherMap.org](https://openweathermap.org/api)
+(weather APIs)
 
 ## License
 
