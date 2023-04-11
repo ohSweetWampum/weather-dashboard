@@ -18,3 +18,11 @@
 #card-currentid{
   border: solid black 1px;
 }
+
+.card-text {
+  font-size: 30px;
+}
+
+.card-title {
+  font-size: 40px;
+}
